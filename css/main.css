@@ -42,7 +42,7 @@ a {
 }
 
 a:hover {
-  text-decoration: underline;
+  /* text-decoration: underline; */
 }
 
 .t-center {
@@ -274,7 +274,7 @@ footer {
   }
 
   header {
-    margin: 1rem 0 1.4rem 0;
+    margin: 2rem 0 1.4rem 0;
   }
 
   #lista-projetos {
@@ -303,6 +303,10 @@ footer {
 @media (max-width: 630px) {
   aside {
     display: none;
+  }
+
+  header {
+    margin-top: 1rem;
   }
 }
 
