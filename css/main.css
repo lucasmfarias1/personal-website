@@ -36,6 +36,10 @@ h4 {
   font-size: 1rem;
 }
 
+p {
+  
+}
+
 a {
   color: #005;
   text-decoration: none;
@@ -55,6 +59,7 @@ a:hover {
   font-weight: 700;
   padding: 0.7rem 1rem;
   margin: 1rem;
+  border-radius: 0.1rem;
   display: inline-block;
   transition: 0.4s background-color;
 }
@@ -124,7 +129,7 @@ aside {
   filter: grayscale(0.7);
 }
 
-.langs img:hover {
+.lang:hover img {
   filter: grayscale(0);
 }
 
@@ -203,17 +208,25 @@ aside {
   height: 600px;
   padding: 0.5rem;
   border-radius: 0.1rem;
-  transition: background 1s ease;
   justify-content: center;
 }
 
 .overlay p {
   margin-bottom: 0.5rem;
-  text-align: justify;
+  text-align: center;
 }
 
 .overlay ul {
   list-style: none;
+}
+
+.overlay ul li {
+  display: inline-block;
+  padding: 0.2rem;
+  margin: 0.1rem 0;
+  border-radius: 0.1rem;
+  background-color: #eee;
+  color: #000;
 }
 
 .overlay-flex {
