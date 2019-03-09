@@ -8,7 +8,7 @@
 }
 
 body {
-  padding: 0 2rem;
+  padding: 0 3rem;
   max-width: 900px;
   margin: 0 auto;
 }
@@ -50,43 +50,105 @@ a:hover {
 }
 
 .btn {
-  background-color: #000;
-  color: #fff;
+  background-color: #ddd;
+  color: #000;
   font-weight: 700;
-  padding: 0.8rem;
-  margin: 0.2rem;
+  padding: 0.7rem 1rem;
+  margin: 1rem;
   display: inline-block;
+  transition: 0.4s background-color;
 }
 
 .btn:hover {
   text-decoration: none;
+  background-color: #fff;
+}
+
+.btn:active {
+  background-color: #aaa;
+}
+
+.arrow-down {
+  cursor: pointer;
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  background-image: url('../images/icons/arrow-down.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #fff;
+  background-size: 60%;
+  box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.2);
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  z-index: 2;
+  transition: 0.4s background-color, 0.2s transform, 0.4s box-shadow;
+}
+
+.arrow-down:hover {
+  box-shadow: 1px 1px 25px rgba(0, 0, 0, 0.3);
+}
+
+.arrow-down:active {
+  background-color: #aaa;
 }
 
 /* HEADER AREA */
 
 header {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   margin: 2rem 0 2.4rem 0;
 }
 
-header div {
+header #cabecalho {
   flex: 2;
   min-width: 16rem;
 }
 
-nav {
+aside {
   flex: 1;
 }
 
-nav ul {
-  list-style: none;
+.langs {
   display: flex;
+  justify-content: flex-end;
+  margin: 0.4rem 0;
 }
 
-nav ul li {
-  flex: 1;
-  text-align: center;
+.langs img {
+  width: 38px;
+  height: 38px;
+  margin: 0 0.4rem;
+  filter: grayscale(0.7);
+}
+
+.langs img:hover {
+  filter: grayscale(0);
+}
+
+.lang {
+  position: relative;
+}
+
+.tooltip {
+  pointer-events:none;
+  white-space: nowrap;
+  z-index: 1;
+  background: rgba(0, 0, 0, 0.85);
+  color: #fff;
+  padding: 0.4rem;
+  border-radius: 0.1rem;
+  visibility: hidden;
+  position: absolute;
+  left: 50%;
+  top: -90%;
+  transform: translateX(-50%);
+}
+
+.lang:hover .tooltip {
+  visibility: visible;
 }
 
 /* END HEADER AREA */
@@ -113,14 +175,12 @@ nav ul li {
   border-radius: 0.1rem;
   box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
   text-align: center;
-  cursor: pointer;
   transition: all 0.5s ease;
   background-position: center;
   background-size: cover;
 }
 
 .projeto:hover {
-  filter: brightness(1.05);
   box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2);
 }
 
@@ -137,18 +197,32 @@ nav ul li {
   position: absolute;
   top: 0;
   left: 0;
-  background: rgba(0, 0, 0, 0.8);
+  background: rgba(0, 0, 0, 0.9);
   color: #fff;
   width: 100%;
   height: 600px;
-  padding: 1rem;
+  padding: 0.5rem;
   border-radius: 0.1rem;
   transition: background 1s ease;
+  justify-content: center;
 }
 
 .overlay p {
-  text-align: justify;
   margin-bottom: 0.5rem;
+  text-align: justify;
+}
+
+.overlay ul {
+  list-style: none;
+}
+
+.overlay-flex {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* align-content: center; */
 }
 
 #duoq {
@@ -166,6 +240,10 @@ nav ul li {
 
 }
 
+#duoq .overlay-flex {
+  padding: 0 15%;
+}
+
 #solokill {
   /* background: #ffc966; */
   background-image: url("../images/solokill-print.jpg");
@@ -173,6 +251,10 @@ nav ul li {
 }
 
 #solokill .logo {
+}
+
+#solokill .overlay-flex {
+  padding: 0;
 }
 
 /* END */
@@ -188,7 +270,7 @@ footer {
 
 @media (max-width: 870px) {
   body {
-    padding: 0 1rem;
+    padding: 0 2rem;
   }
 
   header {
@@ -213,6 +295,23 @@ footer {
     margin-bottom: 1rem;
   }
 
-  #solokill {
+  #solokill .overlay-flex {
+    padding: 0 15%;
+  }
+}
+
+@media (max-width: 630px) {
+  aside {
+    display: none;
+  }
+}
+
+@media (max-width: 410px) {
+  h1 {
+    /* font-size: 2.5rem; */
+  }
+
+  h2 {
+    font-size: 1.5rem;
   }
 }
