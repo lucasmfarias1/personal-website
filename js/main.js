@@ -1,3 +1,3 @@
 $(".projeto").click(function() {
-  $(this).children(".overlay").toggle();
+  $(this).children(".overlay").fadeToggle('fast');
 })
